@@ -238,7 +238,7 @@ class Mediafile extends ActiveRecord
                     return false;
                 $filename = Inflector::slug($this->file->baseName). $counter.'.'. $this->file->extension;
             }
-            $url = "$structure/$filename";
+            $url = "$routes[baseUrl]$structure/$filename";
             $counter++;
         } while(self::findByUrl($url)); // checks for existing url in db
 
